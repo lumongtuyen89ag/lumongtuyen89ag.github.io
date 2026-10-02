@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kết nối TikTok - Vải Bảo Bảo</title>
+<style>body{font-family:system-ui,Arial,sans-serif;max-width:640px;margin:40px auto;padding:0 16px;line-height:1.6;color:#222;background:#fff}code{word-break:break-all;background:#f3f3f3;padding:4px 6px;border-radius:4px}</style>
+</head>
+<body>
+<h1>Kết nối TikTok</h1>
+<p id="msg">Đang chuyển mã kết nối về máy của shop...</p>
+<p>Nếu trang không tự chuyển, hãy chép toàn bộ địa chỉ trên thanh trình duyệt gửi cho người phụ trách.</p>
+<script>
+// Chuyển tiếp ?code=...&state=... về chương trình đang chờ trên máy (127.0.0.1:8765)
+var q = location.search;
+if (q.indexOf('code=') >= 0 || q.indexOf('error=') >= 0) {
+  location.replace('http://127.0.0.1:8765/callback' + q);
+} else {
+  document.getElementById('msg').textContent = 'Không có mã kết nối trong địa chỉ.';
+}
+</script>
+</body>
+</html>
